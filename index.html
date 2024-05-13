@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Password Generator </title>
+        <meta charset = "UTF-8">
+        <style>
+            html{
+                background-color: black;
+            }
+            h3{
+                color: #fff;
+                font-size: 40px;
+                text-transform: uppercase;
+                font-weight: 700;
+                font-family: "Josefin Sans", sans-serif;
+                background: linear-gradient(to right,rgb(89, 227, 172) 10%,rgb(86, 232, 173), #57d75b 60%);
+                background-size: auto auto;
+                background-clip: border-box;
+                background-size: 200% auto;
+                color: #fff;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: textclip 1.5s linear infinite;
+                display: inline-block;
+                margin-top: 80px;
+            }
+            .main{
+                width: 25%;
+                margin-left: 560px;
+                margin-top: 50px;
+                height: 480px;
+            }
+            .main p{
+                color: white;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                margin-left: 90px;
+            }
+            .password{
+                display: flex;
+                gap: 15px;
+                margin-left: -20px;
+            }
+            .password input{
+                margin-left: 20px;
+                height: 30px;
+                color: white;
+                background: transparent;
+                border: none;
+                width: 400px;
+                margin-top: 10px;
+                background-color: rgb(48, 45, 45);
+            }
+            .password button{
+                height: 30px;
+                margin-left: 5px;
+                width: 30%;
+                margin-top: 10px;
+                background-color: rgb(89, 227, 172);
+                border: none;
+            }
+            .check{
+                background-color: rgb(48, 45, 45);
+                width: 100%;
+                color: white;
+                margin-left: 0px;
+                margin-top: 20px;
+                display: block;
+                height: 340px;
+            }
+            .check p{
+                padding-top: 11px;
+                margin-left: 10px;
+                
+            }
+            input{
+                margin-left: 30px;
+            }
+            .span{
+                border: 2px solid white;
+            }
+            .checkbox{
+                margin-left: 20px;
+                display: flex;
+                margin-top: 10px;
+            }
+            .checkbox label{
+                width: 250px;
+            }
+            .checkbox input{
+                margin-right: 30px;
+            }
+            .range input[type=range]{
+                cursor: pointer;
+                width: 100%;
+            
+                background-color: transparent;
+            }
+
+
+
+            .scale_bar{
+                width: 0.425rem;
+                border: 2px solid white;
+
+                margin-right: -40px;
+                margin-left: -50px;
+                height: 30px;
+            }
+            .scale{
+                display: flex;
+                margin-left: -10px;
+                margin-top: -10px;
+
+            }
+            .strength{
+                display: flex;
+                margin-top: -100px;
+                margin-left: -60px;
+                width: 75%;
+
+                width: 25%;
+
+            }
+
+            .row{
+                display: flex;
+            }
+
+            .row span{
+                font-size: 20px;
+                margin-top: 15px;
+                margin-left: 50px;
+            }
+            #gen{
+                background-color: rgb(89, 227, 172);;
+                margin-left: 130px;
+                margin-top: 10px;
+                height: 30px;
+                border: none;
+            }
+
+            #copy{
+                width: 70px;
+                margin-left: 90px;
+            }
+
+            @media (min-width :500px) and (max-width : 1250px){
+                h3{
+                    margin-left: 140px;
+                }
+                .main{
+                    margin-left: 140px;
+                    width: 350px;
+                }
+            }
+
+            @media(min-width : 1250px){
+                h3{
+                    margin-left: 480px;
+                }
+            }
+
+            @media (max-width : 500px){
+                h3{
+                    margin-left: 80px;
+                }
+                .main{
+                    margin-left: 70px;
+                    width: 300px;
+                    height: 550px;
+                }
+                .password{
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .password input{
+                    width: 300px;
+                }
+
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Password Generator</h3>
+        <div class = "main">
+            <div class = "password">
+                <input type="password" name="pwd" value="" placeholder = "Enter your password" id = "pwd" style="color: white;">
+                <button type="" id = "copy">Copy</button>
+            </div>
+            <div class = "check">
+                <p>Character Length</p>
+                <div class = "length">
+                    <input type="range" min='1' max = '30' value ='0'id = "length-slider">
+                    <span id = "display-length">0</span>
+                </div>
+                <div class = "checkbox">
+                    <label for="lowercase">Include lowercase letter(a-z)</label>
+                    <input type="checkbox" name="lowercase" value="" id = "lowercase" disabled>
+                </div>
+                <div class = "checkbox">
+                    <label for="uppercase">Include uppercase letter(A-Z)</label>
+                    <input type="checkbox" name="lowercase" value="" id = "uppercase" disabled>
+                </div>
+                <div class = "checkbox">
+                    <label for="numbers">Include numbers(0-9)</label>
+                    &nbsp<input type="checkbox" name="lowercase" value="" id = "numbers" disabled>
+                </div>
+                <div class = "checkbox">
+                    <label for="symbols">Include symbols(@-*)</label>
+                    <input type="checkbox" name="lowercase" value="" id = "symbols" disabled>
+                </div>
+                
+            </div>
+            <div class = "strength">
+                <p>Strength</p>
+                <div class = "row">
+                    <span class = "strength | fs-md" id = "text" style = " margin-left: 60px;width: 150px;margin-top: 15px;color:  rgb(89, 227, 172);;font-size: 20px;"></span>
+              <!--    <div class = "scale " data-value = "3">
+                        <span class = "scale_bar"></span>
+                        <span class = "scale_bar"></span>
+                        <span class = "scale_bar"></span>
+                        <span class = "scale_bar"></span>
+                    </div>-->
+                </div>
+            </div>
+            <button type="" id = "gen">Generate Password</button>
+        </div>
+    
+<script src= "./index.js"></script>
+    </body>
+</html>
