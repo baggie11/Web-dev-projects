@@ -1,1 +1,5 @@
-This repo contains all the frontend projects done by me
+This repository contains the following frontend projects:
+
+1. Password Generator 
+
+2. Age Calculator
