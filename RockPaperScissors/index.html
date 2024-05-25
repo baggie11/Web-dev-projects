@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Rock Paper Scissors games</title>
+        <meta charset = "UTF-8">
+        <style>
+            html{
+                background: linear-gradient(rgb(111, 97, 192),rgb(139, 232, 229),rgb(213, 255, 228));
+
+                height: 100%;
+            }
+            h1{
+                padding-left: 140px;
+            }
+            .game{
+                /*background: linear-gradient(rgb(133, 230, 197),rgb(200, 255, 224));*/
+                width: 50%;
+                margin-left: 310px;
+                margin-top: 100px;
+                height: 400px;
+            }
+    
+            .score{
+                margin-left: 350px;
+                width: 45%;
+                margin-top: 27px;
+                display: flex;
+                font-size: 20px;
+            }
+            .images1 img{
+                border-radius: 50%;
+                height: 50%;
+                width: 20%;
+                margin-left: 200px;
+                margin-top: 25px;
+                
+            }
+            #rock{
+                margin-left: 30px;
+            }
+            .beforeplay{
+                margin-left: 90px;
+                margin-top: 90px;
+            }
+            #scissors{
+                height: 60%;
+                width: 10%;
+                margin-left: 270px;
+                margin-top: 0px;
+            }
+            .beforeplay p{
+                margin-left: 150px;
+                font-size: 30px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            .images{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            .images1{
+                width: 48%;
+                height: 100px;
+            
+            }
+
+            #third{
+                width: 100%;
+            }
+            .onplay{
+                display: flex;
+            }
+
+            .button-13 {
+            background-color: #fff;
+            border: 1px solid #d5d9d9;
+            border-radius: 8px;
+            box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+            box-sizing: border-box;
+            color: #0f1111;
+            cursor: pointer;
+            display: inline-block;
+            font-family: "Amazon Ember",sans-serif;
+            font-size: 13px;
+            line-height: 29px;
+            padding: 0 10px 0 11px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: middle;
+            width: 100px;
+            }
+
+            .button-13:hover {
+            background-color: #f7fafa;
+            }
+
+            .button-13:focus {
+            border-color: #008296;
+            box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+            outline: 0;
+            }
+            .result img{
+                border-radius: 50%;
+                height: 50%;
+                width: 20%;
+            }
+            .afterplay{
+                margin-left: 250px;
+                visibility: hidden;
+                margin-top: -250px;
+
+            }
+            h4{
+                font-size: 18px;
+                width: 300px;
+            }
+            .top{
+                visibility: visible;
+            }
+            h1{
+                margin-left: 70px;
+            }
+            button{
+                margin-left: 120px;
+                border: none;
+                height: 35px;
+            }
+            .finalscore{
+                visibility: hidden;
+                width: 50%;
+                height: 120px;
+                margin-top: -180px;
+                margin-left: 210px;
+                border: 5px solid black;
+            }
+            .window{
+                display: flex;
+            }
+            h2{
+                margin-top: 30px;
+                margin-left: 70px;
+            }
+            .choice{
+                margin-left: -80px;
+            }
+            #result{
+                margin-top: -3px;
+                width: 45%;
+                padding-top: 60px;
+                color: black;
+                padding-left: 40px;
+            }
+            #closewindow{
+                padding-left: 110px;
+                text-decoration: none;
+                font-size: 30px;
+                color: black;
+            }
+            #mybtn{
+                margin-left: 3px;
+            }
+            @media (min-width : 500px) and  (max-width :1250px) {
+                .game{
+                    margin-left: 60px;
+                    width: 450px;
+                    height: 500px;
+                }
+                .score{
+                    margin-left:0px;
+                }
+                .images{
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+                h1{
+                    margin-left: 50px;
+                }
+                .images1{
+                    width: 48%;
+                    height: 100px;
+                
+                }
+                #third{
+                    width: 48%;
+                }
+                #paper{
+                    margin-left: 100px;
+                }
+                #scissors{
+                    margin-left: 100px;
+                    margin-top: 10px;
+                    width: 21%;
+                }
+                #rock{
+                    margin-left: 100px;
+                
+                }
+                .afterplay{
+                    margin-left: 90px;
+
+                }
+                .finalscore{
+                    margin-top: -300px;
+                    width: 300px;
+                    margin-left: 150px;
+                }
+            }
+
+            @media (max-width : 500px){
+                .game{
+                    margin-left: 30px;
+                    width: 450px;
+                }
+                .score{
+                    margin-left: 160px;
+                }
+                h1{
+                    margin-left: -80px;
+                    font-size: 155%;
+                }
+                .beforeplay{
+                    margin-left: 70px;
+                }
+                .afterplay{
+                    margin-left: 0px;
+                }
+                .beforeplay p {
+                    margin-left: 35px;
+                    font-size: 20px;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+                .images{
+                    margin-left: -100px;
+                }
+                .finalscore{
+                    margin-left: 50px;
+                    width: 270px;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class = "game">
+            <h1>ROCK PAPER SCISSORS</h1>
+            <div class = "score">
+                <h3>Score: </h3>
+                <h3 id = "score">0</h3>
+            </div>
+            <div class = "beforeplay">
+                <p>Choose one of the below</p>
+                <div class = "images">
+                    <div class = "images1">
+                        <img src="./paper.jpeg" alt="" id = "paper">
+                    </div>
+                    <div class = "images1" >
+                        <img src="./rock.png" alt="" id ="rock">
+                    </div>
+                    <div class = "images1" id = "third">
+                        <img src="./scissors.png" alt="" id ="scissors">
+                    </div>
+                </div>
+            </div>
+            <div class = "afterplay">
+                 <div class = "onplay">
+                        <div class = "result">
+                            <img src="./rock.png" alt="" id = "u">
+                            <p id = "y">YOU PICKED</p>
+                        </div>
+                        <div class = "result">
+                            <img src="./scissors.png" alt="" id = "me">
+                            <p id  = "m">THE COMPUTER PICKED</p>
+                        </div>
+                
+                 </div>
+                <h2>YOU WIN</h2>
+                <div class = "choice">
+                    <button type="" id = "btn" class = "button-13">Play again!</button>
+                    <button type="" id = "mybtn" class = "button-13">Reset</button>
+                </div>
+                
+            </div>
+            <div class = "finalscore">
+                <div class = "window">
+                <h3 id = "result">Your score</h3>
+                <a href="#" id = "closewindow">x</a>
+                </div>
+                
+            </div>
+           
+        </div>
+        <script>
+            var rock = document.getElementById("rock");
+            var paper = document.querySelector("#paper");
+            var scissors = document.querySelector("#scissors");
+            var beforeplay = document.querySelector(".beforeplay");
+            var afterplay = document.querySelector(".afterplay");
+            var button = document.querySelector("#btn");
+            var user = document.getElementById("u");
+            var comp = document.getElementById("me");
+            var score1 = document.getElementById("score");
+            var button1 = document.getElementById("mybtn");
+            var popup = document.querySelector(".finalscore");
+            var result = document.getElementById("result");
+            var close1 = document.getElementById("closewindow");
+            var score = 0;
+            var random ;
+            var cust;
+
+            //calculating who won
+            function calci(cust){
+                if (cust === 1 ){
+                    if (random === 1){
+                        document.querySelector("h2").innerHTML = "IT IS A TIE";
+                        user.src = rock.src;
+                        comp.src = rock.src;
+                        score++;
+                    }
+                    else if (random === 2){
+                        document.querySelector("h2").innerHTML = "THE COMPUTER WON";
+                        user.src = rock.src;
+                        comp.src = paper.src;
+                    }
+                    else if (random === 3){
+                        document.querySelector("h2").innerHTML = "YOU WON";
+                        user.src = rock.src;
+                        comp.src =  scissors.src;
+                        score++;
+                    }
+                    score1.innerHTML = score;
+                }
+                else if (cust === 2){
+                    if (random === 1){
+                        document.querySelector("h2").innerHTML = 'YOU WON';
+                        user.src = paper.src;
+                        comp.src = rock.src;
+                        score++;
+                    }
+                    else if (random === 2){
+                        document.querySelector("h2").innerHTML = "IT IS A TIE";
+                        user.src = paper.src;
+                        comp.src = paper.src;
+                        score++;
+                    }
+                    else if (random === 3){
+                        document.querySelector("h2").innerHTML = "THE COMPUTER WON";
+                        user.src = paper.src;
+                        comp.src = scissors.src;
+                    }
+                    score1.innerHTML = score;}
+                else if (cust === 3){
+                    if (random === 1){
+                        document.querySelector("h2").innerHTML = 'THE COMPUTER WON';
+                        user.src = scissors.src;
+                        comp.src = rock.src;
+                    }
+                    else if (random === 2){
+                        document.querySelector("h2").innerHTML = "YOU WON";
+                        user.src = scissors.src;
+                        comp.src = paper.src;
+                        score++;
+                    }
+                    else if (random === 3){
+                        document.querySelector("h2").innerHTML = "IT IS A TIE";
+                        user.src = scissors.src;
+                        comp.src = scissors.src;
+                        score++;
+                    }
+                    score1.innerHTML = score; }}
+
+            //adding event listeners
+            rock.addEventListener("click",function(){
+                cust = 1;
+                mouseclick();
+                beforeplay.style.visibility = "hidden";
+                afterplay.style.visibility = "visible";
+                calci(cust);
+            });
+
+            close1.addEventListener('click',function(){
+                popup.style.visibility = 'hidden';
+                beforeplay.style.visibility = "visible";
+            })
+
+            paper.addEventListener('click',function(){
+                cust = 2;
+                mouseclick();
+                beforeplay.style.visibility = "hidden";
+                afterplay.style.visibility = "visible";
+                calci(cust);
+            });
+
+
+            scissors.addEventListener('click',function(){
+                cust = 3;
+                mouseclick();
+                afterplay.style.visibility = "visible";
+                beforeplay.style.visibility = "hidden";
+                calci(cust);
+            });
+
+
+            button.addEventListener('click',function(){
+                afterplay.style.visibility = "hidden";
+                beforeplay.style.visibility = "visible";
+            });
+
+            button1.addEventListener('click',function(){
+                afterplay.style.visibility = "hidden";
+                popup.style.visibility = "visible";
+                result.innerHTML = "Your score is  " + score;
+                score1.innerHTML = 0;
+                score = 0;    
+
+            })
+
+            //computer choice
+
+            function mouseclick(){
+                random  = Math.floor(Math.random() *3)+1;
+                beforevalue = random;
+                console.log(random);
+            };
+
+
+
+         </script>
+    </body>
+</html>
