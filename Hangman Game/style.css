@@ -217,39 +217,4 @@ select {
     .main{
         margin-top: -440px;
         visibility: hidden;
-    }
-
-@media (max-width: 500px){
-    h1{
-        margin-left: -490px;
-    }
-    h2{
-        margin-left: -440px;
-    }
-    .want{
-        margin-left: 10px;
-        width: 420px;
-    }
-    button{
-        margin-left: 150px;
-    }
-    .select{
-        margin-left: 55px;
-    }
-    .intogame{
-        width: 430px;
-    }
-    .word{
-        display: block;
-    }
-    h2{
-        margin-left: -230px;
-    }
-    .guess{
-        margin-left: -390px;
-        width: 15px;
-        font-size: 15px;
-    }
-
-}
-        
+    }        
