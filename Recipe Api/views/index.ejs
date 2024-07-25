@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>Recipe API</title>
+        <style>
+            header{
+                background-color: rgb(31, 11, 6);
+                height: 100px;
+                color: rgb(251, 200, 200);
+            }
+            h1{
+                margin-top:15px;
+                margin-left: 650px;
+            }
+            .content{
+                margin-left: 500px;
+                margin-top: 50px;
+                font-size: 20px;
+            }
+            .input{
+                border: 2px soldi black;
+                margin-top: 100px;
+                margin-left: 620px;
+            }
+            h2{
+                margin-left: -60px;
+            }
+            input{
+                height: 30px;
+                width: 250px;
+            }
+            .result{
+                margin-top: 100px;
+            }
+            @media only screen and (max-width: 500px) {
+                h1{
+                    margin-left: 170px;
+                }
+                .input{
+                    margin-left: 50px;
+                }
+                .content{
+                    margin-left: 50px;
+                }
+                #message{
+                    margin-left: 10px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <p style = "visibility: hidden;">hello</p>
+            <h1>Recipe API</h1>
+        </header>
+        <div class = "intro">
+            <div class = "content">
+                <p>Get the recipe for any dish you need with just a click of the mouse!</p>
+            </div>
+            <div class = 'input'>
+                <h2 id = "message">People LOVE our Recipe Generator!</h2><br><br>
+                <form action="/recipie" method = "GET">
+                    <input type="text" placeholder="Enter the name of the dish" name = "dish">
+                    <button type = "submit">Generate</button>
+                </form>
+            </div>
+            <div class = "result">
+                <% if (locals.content) { %>
+                    <% if (content.length > 0) { %>
+                        <ul>
+                            <h1 style="margin-left: 610px;">Recipes found!</h1>
+                            <% for (let i = 0; i < content.length; i++) { %>
+                                <li>
+                                    <h2 style="margin-left: 0px;"><%= content[i].title %></h2>
+                                    <p><strong>Ingredients:</strong> <%= content[i].ingredients%></p>
+                                    <p><strong>Servings:</strong> <%= content[i].servings %></p>
+                                    <p><strong>Instructions:</strong> <%= content[i].instructions %></p>
+                                </li>
+                                <hr>
+                            <% } %>
+                        </ul>
+                    <% } else { %>
+                        <h2 style="margin-left: 50px;">No recipe found</h2>
+                    <% } %>
+                <% } else { %>
+                    <p style="font-size: 30px;">The recipes will be displayed here!</p>
+                <% } %>
+                
+            </div>
+            
+        </div>
+    </body>
+</html>
