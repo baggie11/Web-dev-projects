@@ -258,13 +258,7 @@ check.addEventListener("click",function(){
             let divElement = document.getElementById(`div-${letterindex + 1}`);
             divElement.textContent = button.value;
             let count = name.split('').filter(char => char === button.value).length;
-            console.log("count");
-            console.log(count)
             tryword = tryword + button.value.repeat(count);
-            console.log("tryword");
-            console.log(tryword);
-            console.log(tryword.length);
-            console.log(name.length);
             if (count > 1){
                 for(let i = 1;i<count;i++){
                     let index = letterindex + 1;
