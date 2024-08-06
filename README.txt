@@ -15,7 +15,9 @@ They are the  projects I developed to test my knowledge.
 
 
 
-1. Recipe API - I built this recipe provider which provides recipes for any dish you require. I made use of the public api 'Recipe API' from API Ninjas.
+5. Recipe API - I built this recipe provider which provides recipes for any dish you require. I made use of the public api 'Recipe API' from API Ninjas.
+
+
 
 
 
